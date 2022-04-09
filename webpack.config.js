@@ -1,6 +1,8 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 // This is the main configuration object.
 // Here, you write different options and tell Webpack what to do
@@ -15,21 +17,23 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true,
   },
 
   module: {
     rules: [
-        {
-            test: /\.js$/,
-            exclude: /(node_modules)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
-                }
-            }
-        },
+      // Babel loader was giving regeneratorRuntime is not defined? error
+        // {
+        //     test: /\.js$/,
+        //     exclude: /(node_modules)/,
+        //     use: {
+        //         loader: 'babel-loader',
+        //         options: {
+        //             presets: ['@babel/preset-env']
+        //         }
+        //     }
+        // },
         {
             // Apply rule for .sass, .scss or .css files
             test: /\.(sa|sc|c)ss$/,
@@ -61,30 +65,16 @@ module.exports = {
                    }
                  ]
                  
-          },
-              {
-      // Now we apply rule for images
-      test: /\.(png|jpe?g|gif|svg)$/,
-      use: [
-             {
-               // Using file-loader for these files
-               loader: "file-loader",
-
-               // In options we can set different things like format
-               // and directory to save
-               options: {
-                 outputPath: 'images'
-               }
-             }
-           ]
-    }
+          }
     ],
 
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "bundle.css"
-    })
+    }),
+
+    new HtmlWebpackPlugin()
 ],
 
   // Default mode for Webpack is production.
@@ -92,4 +82,5 @@ module.exports = {
   // on the final bundle. For now, we don't need production's JavaScript 
   // minifying and other things, so let's set mode to development
   mode: 'development'
+
 };
