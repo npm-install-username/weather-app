@@ -1,2 +1,4 @@
 import '../sass/styles.scss';
-console.log("hi")
+import getWeatherData from './WeatherData'
+
+console.log(getWeatherData("London"))
