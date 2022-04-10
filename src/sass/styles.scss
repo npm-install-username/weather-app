@@ -1,11 +1,36 @@
+
 *{
     padding: 0;
     margin: 0;
 }
 
-#content{
-    background-color: blue;
-    height: 100vh;
-    width: 100vw;
 
+
+.container{
+    height: 100vh;
 }
+
+#content{
+    background-image: url(../images/snow.jpg);
+    height: 100%;
+    position:relative;
+}
+
+
+
+#app-container{
+    position:absolute;
+    border-radius: 5px;
+    width: 400px;
+    height: 700px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    margin: auto;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+}
+
+
+@import 'mobile'; // has to to be imported at end for it to work - not sure why
