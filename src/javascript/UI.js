@@ -46,6 +46,12 @@ display.appendChild(nextDaysWeather)
 function displayTodaysWeather(location,data) {
     // Clears div prior to displaying new data
     todayWeather.innerHTML = ''
+    if (typeof data === 'string'){
+        let noDataFoundMessage = document.createElement('h4')
+        noDataFoundMessage.innerText = data.toUpperCase()
+        todayWeather.appendChild(noDataFoundMessage)
+        return
+    }
 
     let todayWeatherLocation = document.createElement('h2')
     todayWeatherLocation.innerText = location.toUpperCase()
