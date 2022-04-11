@@ -3,6 +3,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: $fontStack;
 }
 
 
@@ -40,6 +41,7 @@
         background: $darkGlass;
         border-style: none;
         padding: 5px;
+        font-weight: bold;
 
         &:focus{
             outline: none; 
