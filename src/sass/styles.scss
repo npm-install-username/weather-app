@@ -40,21 +40,47 @@
     backdrop-filter: blur(5px);
     text-align: center;
 
+
+}
+
+
+#search-bar-div{
+    padding-top: 20px;
+
     input {
-        margin: 20px;
+        
         width: 80%;
         border-radius: 5px;
         background: $darkGlass;
         border-style: none;
         padding: 5px;
-        font-weight: bold;
+        
 
 
         &:focus{
             outline: none; 
+            background-color: $selected;
+            font-weight: bold;
+        }
+        
+
+    }
+
+    button{
+        background-color: $darkGlass;
+        border-style: none;
+        width: 30%;
+        
+        padding: 5px;
+        margin-top: 5px;
+
+        border-radius: 5px;
+
+        &:active{
+            transform: scale(0.98);
+            background-color: $selected
         }
     }
 }
-
 
 @import 'mobile'; // has to to be imported at end for it to work - not sure why
