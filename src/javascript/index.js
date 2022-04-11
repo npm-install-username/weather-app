@@ -1,4 +1,5 @@
 import './UI'
+import displayTodaysWeather from './UI'
 import '../sass/styles.scss';
 import getWeatherData from './WeatherData'
 
@@ -10,6 +11,7 @@ searchBtn.addEventListener('click',()=>{
     console.log(location)
     getWeatherData(location,'metric').then((data)=>{
         console.log(data)
+        displayTodaysWeather(location,data)
     })
 })
 

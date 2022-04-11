@@ -14,13 +14,12 @@
 }
 
 #content{
-    background-image: url(../images/fewClouds.jpg);
+    background-image: url(../images/Mist.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     height: 100%;
-    
     position:relative;
 }
 
@@ -30,7 +29,7 @@
     position:absolute;
     border-radius: 5px;
     width: 400px;
-    height: 500px;
+    height: 700px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -80,6 +79,20 @@
             transform: scale(0.98);
             background-color: $selected
         }
+    }
+}
+
+#display{
+    margin: 20px;
+    height: 70%;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap:20px;
+
+    .display-box{
+        background-color: $darkGlass;
+        border-radius: 5px;
+        padding: 10px;
     }
 }
 

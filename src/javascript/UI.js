@@ -29,3 +29,29 @@ searchBtn.innerText = "Search"
 searchBtn.id = "search-bar-btn"
 searchBarDiv.appendChild(searchBtn)
 
+// Weather Display section
+let display = document.createElement('div')
+display.id = 'display'
+appContainer.appendChild(display)
+let todayWeather = document.createElement('div')
+todayWeather.id = 'today-weather'
+todayWeather.className = 'display-box'
+let nextDaysWeather = document.createElement('div')
+nextDaysWeather.id = 'next-days-weather'
+nextDaysWeather.className = 'display-box'
+display.appendChild(todayWeather)
+display.appendChild(nextDaysWeather)
+
+// Today's weather display
+function displayTodaysWeather(location,data) {
+    // Clears div prior to displaying new data
+    todayWeather.innerHTML = ''
+    
+    let todayWeatherLocation = document.createElement('h1')
+    todayWeatherLocation.innerText = location.toUpperCase()
+    
+    todayWeather.appendChild(todayWeatherLocation)
+
+}
+
+export default displayTodaysWeather
