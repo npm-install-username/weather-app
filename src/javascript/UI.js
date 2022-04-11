@@ -1,4 +1,4 @@
-import './Background'
+import changeBackground from './Background'
 
 // Create main containers
 let container = document.createElement('div')
@@ -53,6 +53,8 @@ function displayTodaysWeather(location,data) {
         return
     }
 
+    changeBackground(data)
+
     let todayWeatherLocation = document.createElement('h2')
     todayWeatherLocation.innerText = location.toUpperCase()
     todayWeather.appendChild(todayWeatherLocation)
@@ -70,6 +72,7 @@ function displayTodaysWeather(location,data) {
     let todayWeatherIcon = document.createElement('img')
     todayWeatherIcon.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`
     todayWeather.appendChild(todayWeatherIcon)
+
 
     let todayWeatherWindSpeed = document.createElement('h5')
     todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" km/h"
