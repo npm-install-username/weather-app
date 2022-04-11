@@ -46,11 +46,28 @@ display.appendChild(nextDaysWeather)
 function displayTodaysWeather(location,data) {
     // Clears div prior to displaying new data
     todayWeather.innerHTML = ''
-    
-    let todayWeatherLocation = document.createElement('h1')
+
+    let todayWeatherLocation = document.createElement('h2')
     todayWeatherLocation.innerText = location.toUpperCase()
-    
     todayWeather.appendChild(todayWeatherLocation)
+
+    let todayWeatherTemp = document.createElement('h4')
+    todayWeatherTemp.innerText = data.temp + '\xB0' + "C"
+    todayWeather.appendChild(todayWeatherTemp)
+
+
+
+    let todayWeatherDesc = document.createElement('h5')
+    todayWeatherDesc.innerText = data.description
+    todayWeather.appendChild(todayWeatherDesc)
+
+    let todayWeatherIcon = document.createElement('img')
+    todayWeatherIcon.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`
+    todayWeather.appendChild(todayWeatherIcon)
+
+    let todayWeatherWindSpeed = document.createElement('h5')
+    todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" km/h"
+    todayWeather.appendChild(todayWeatherWindSpeed)
 
 }
 
