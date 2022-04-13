@@ -5,7 +5,8 @@ let container = document.createElement('div')
 container.className="container"
 document.body.appendChild(container)
 let content = document.createElement('div')
-content.id="content"
+content.id='content'
+content.classList.add('content-01')
 container.appendChild(content)
 
 // Create app container

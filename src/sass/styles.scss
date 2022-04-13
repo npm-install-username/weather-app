@@ -1,5 +1,6 @@
 
 @import 'config';
+@import 'background';
 *{
     padding: 0;
     margin: 0;
@@ -13,16 +14,6 @@
     width: 100vw;
 }
 
-#content{
-    background-image: url(../images/11.jpg);
-    box-shadow:inset 0 0 0 150vw rgba(0,0,0,0.3);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    position:relative;
-}
 
 
 
