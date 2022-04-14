@@ -21,6 +21,9 @@ searchBtn.addEventListener('click',()=>{
 })
 
 
+
+// THIS EVENT LISTENER CURRENTLY RUNS TWICE EVERY CLICK
+// NEED TO FIX
 let tempSwitch = document.getElementById('tempSwitchDiv')
 let checkedTemp = document.getElementById('toggle-on')
 tempSwitch.addEventListener('click',()=>{
@@ -28,6 +31,16 @@ tempSwitch.addEventListener('click',()=>{
         tempUnit = "metric"
     } else{
         tempUnit = "imperial"
+    }
+
+    let location= document.getElementById("location")
+    if(location){
+        location = location.innerText
+        console.log(location)
+        getWeatherData(location,tempUnit).then((data)=>{
+            console.log(data)
+            displayTodaysWeather(location,data,tempUnit)
+        })
     }
 })
 

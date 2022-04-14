@@ -76,6 +76,7 @@ function displayTodaysWeather(location,data,units) {
     changeBackground(data)
 
     let todayWeatherLocation = document.createElement('h2')
+    todayWeatherLocation.id = "location"
     todayWeatherLocation.innerText = location.toUpperCase()
     todayWeather.appendChild(todayWeatherLocation)
 
