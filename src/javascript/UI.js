@@ -43,6 +43,12 @@ nextDaysWeather.className = 'display-box'
 display.appendChild(todayWeather)
 display.appendChild(nextDaysWeather)
 
+// Temperature switch toggle units
+
+let tempSwitch = document.createElement('div')
+tempSwitch.innerHTML= "<input id='toggle-on' class='toggle toggle-left' name='toggle' value='false' type='radio' checked><label for='toggle-on' class='btn'>\xB0C</label><input id='toggle-off' class='toggle toggle-right' name='toggle' value='true' type='radio'><label for='toggle-off' class='btn'>\xB0F</label>"
+appContainer.appendChild(tempSwitch)
+
 // Today's weather display
 function displayTodaysWeather(location,data) {
     // Clears div prior to displaying new data
