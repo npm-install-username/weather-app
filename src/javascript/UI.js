@@ -1,5 +1,6 @@
 import changeBackground from './Background'
 
+
 // Create main containers
 let container = document.createElement('div')
 container.className="container"
@@ -44,10 +45,22 @@ display.appendChild(todayWeather)
 display.appendChild(nextDaysWeather)
 
 // Temperature switch toggle units
-
+// Init temperature units
+let tempUnit = "metric"
 let tempSwitch = document.createElement('div')
+tempSwitch.id = 'tempSwitchDiv'
 tempSwitch.innerHTML= "<input id='toggle-on' class='toggle toggle-left' name='toggle' value='false' type='radio' checked><label for='toggle-on' class='btn'>\xB0C</label><input id='toggle-off' class='toggle toggle-right' name='toggle' value='true' type='radio'><label for='toggle-off' class='btn'>\xB0F</label>"
 appContainer.appendChild(tempSwitch)
+let checkedTemp = document.getElementById('toggle-on')
+tempSwitch.addEventListener('click',()=>{
+    if(checkedTemp.checked){
+        tempUnit = "metric"
+    } else{
+        tempUnit = "imperial"
+    }
+})
+
+
 
 // Today's weather display
 function displayTodaysWeather(location,data) {
