@@ -63,7 +63,7 @@ tempSwitch.addEventListener('click',()=>{
 
 
 // Today's weather display
-function displayTodaysWeather(location,data) {
+function displayTodaysWeather(location,data,units) {
     // Clears div prior to displaying new data
     todayWeather.innerHTML = ''
     if (typeof data === 'string'){
@@ -80,7 +80,15 @@ function displayTodaysWeather(location,data) {
     todayWeather.appendChild(todayWeatherLocation)
 
     let todayWeatherTemp = document.createElement('h4')
-    todayWeatherTemp.innerText = data.temp + '\xB0' + "C"
+    let todayWeatherWindSpeed = document.createElement('h5')
+    if(units == "metric"){
+        todayWeatherTemp.innerText = data.temp + '\xB0' + "C"
+        todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" km/h"
+    } else{
+        todayWeatherTemp.innerText = data.temp + '\xB0' + "F"
+        todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" mph"
+    }
+    
     todayWeather.appendChild(todayWeatherTemp)
 
 
@@ -94,8 +102,8 @@ function displayTodaysWeather(location,data) {
     todayWeather.appendChild(todayWeatherIcon)
 
 
-    let todayWeatherWindSpeed = document.createElement('h5')
-    todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" km/h"
+    
+    
     todayWeather.appendChild(todayWeatherWindSpeed)
 
 }
