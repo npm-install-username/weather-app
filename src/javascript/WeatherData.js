@@ -22,4 +22,18 @@ async function getWeatherData(location,units){
    
 }
 
-export default getWeatherData
+async function getNextDaysWeather(location, units){
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`,{mode: 'cors'})
+        const data = await response.json()
+        return data 
+        
+    } catch (error) {
+        console.log(error)
+        return "Location not found! Please try again"
+    }
+
+}
+
+
+export { getWeatherData, getNextDaysWeather}

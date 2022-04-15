@@ -3,7 +3,7 @@
 import './UI'
 import displayTodaysWeather from './UI'
 import '../sass/styles.scss';
-import getWeatherData from './WeatherData'
+import {getWeatherData, getNextDaysWeather} from './WeatherData'
 
 // variable init
 let tempUnit = "metric"
@@ -18,6 +18,9 @@ searchBtn.addEventListener('click',()=>{
         console.log(data)
         displayTodaysWeather(location,data,tempUnit)
     })
+    getNextDaysWeather(location,tempUnit).then((data)=>{
+        console.log(`next days data: ${JSON.stringify(data)}`)
+    })
 })
 
 
@@ -25,7 +28,7 @@ searchBtn.addEventListener('click',()=>{
 
 let tempSwitch = document.getElementsByClassName('toggle')
 tempSwitch = Array.from(tempSwitch)
-let checkedTemp = document.getElementById('toggle-on')
+
 
 
 tempSwitch.forEach(element => {
