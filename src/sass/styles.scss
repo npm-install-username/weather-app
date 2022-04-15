@@ -83,15 +83,24 @@
     gap:20px;
 
     .display-box{
-        background-color: $darkGlass;
         border-radius: 5px;
-        padding: 10px;
     }
 
     #today-weather{
         text-align: left;
+        background-color: $darkGlass;
+    }
 
+    #next-days-weather{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
 
+        .next-days-display{
+            
+            border-radius: 5px;
+            background-color: $darkGlass;
+        }
     }
 }
 

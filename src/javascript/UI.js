@@ -44,6 +44,20 @@ nextDaysWeather.className = 'display-box'
 display.appendChild(todayWeather)
 display.appendChild(nextDaysWeather)
 
+// next days sub section
+let day2 = document.createElement('div')
+day2.id ="day2"
+day2.className = "next-days-display"
+let day3 = document.createElement('div')
+day3.id ="day3"
+day3.className = "next-days-display"
+let day4 = document.createElement('div')
+day4.id ="day4"
+day4.className = "next-days-display"
+nextDaysWeather.appendChild(day2)
+nextDaysWeather.appendChild(day3)
+nextDaysWeather.appendChild(day4)
+
 // Temperature switch toggle units
 // Init temperature units
 let tempUnit = "metric"
