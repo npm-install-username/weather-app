@@ -31,6 +31,7 @@
     background-color: $lightGlass;  
     backdrop-filter: blur(5px);
     text-align: center;
+    box-shadow: $shadow;
 
 
 }
@@ -38,7 +39,7 @@
 
 #search-bar-div{
     padding-top: 20px;
-
+    
     input {
         
         width: 80%;
@@ -46,7 +47,7 @@
         background: $darkGlass;
         border-style: none;
         padding: 5px;
-        
+        box-shadow: $shadow;
 
 
         &:focus{
@@ -67,7 +68,7 @@
         margin-top: 5px;
 
         border-radius: 5px;
-
+        box-shadow: $shadow;
         &:active{
             transform: scale(0.98);
             background-color: $selected
@@ -89,6 +90,7 @@
     #today-weather{
         text-align: left;
         background-color: $darkGlass;
+        box-shadow: $shadow;
     }
 
     #next-days-weather{
@@ -100,6 +102,7 @@
             
             border-radius: 5px;
             background-color: $darkGlass;
+            box-shadow: $shadow;
         }
     }
 }
