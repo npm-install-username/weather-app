@@ -22,8 +22,7 @@ searchBtn.addEventListener('click',()=>{
 
 
 
-// THIS EVENT LISTENER CURRENTLY RUNS TWICE EVERY CLICK
-// NEED TO FIX
+
 let tempSwitch = document.getElementsByClassName('toggle')
 tempSwitch = Array.from(tempSwitch)
 let checkedTemp = document.getElementById('toggle-on')
@@ -46,32 +45,10 @@ tempSwitch.forEach(element => {
         let location= document.getElementById("location")
         if(location){
             location = location.innerText
-            
             getWeatherData(location,tempUnit).then((data)=>{
-                
                 displayTodaysWeather(location,data,tempUnit)
             })
         }
         return tempUnit
     })
 });
-
-// tempSwitch.addEventListener('click',()=>{
-//     if(checkedTemp.checked){
-//         tempUnit = "metric"
-//     } else{
-//         tempUnit = "imperial"
-//     }
-
-//     let location= document.getElementById("location")
-//     if(location){
-//         location = location.innerText
-//         console.log(location)
-//         getWeatherData(location,tempUnit).then((data)=>{
-//             console.log(data)
-//             displayTodaysWeather(location,data,tempUnit)
-//         })
-//     }
-// })
-
-

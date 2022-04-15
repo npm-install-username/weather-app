@@ -1,6 +1,6 @@
 .content{
     
-
+    
 
     &-01{
         background-image: url(../images/01.jpg);
@@ -29,6 +29,7 @@
     &-50{
         background-image: url(../images/50.jpg);
     }
+
 }
 
 #content{
@@ -36,7 +37,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+
     background-size: cover;
     height: 100%;
     position:relative;
+    transition: background 0.6s ease-in-out;
 }
