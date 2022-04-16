@@ -121,15 +121,21 @@ function displayTodaysWeather(location,data,units) {
 
 function displayNextDaysWeather(data, units){
 
+    if (typeof data === 'string'){
+        for (let index = 2; index < 5; index++) {
+            const element = document.getElementById(`day${index}`)
+            element.innerHTML=''
+            
+        } 
+        return
+    }
     
     for (const day in data) {
         
         const dayBox = document.getElementById(day)
         // Clears div prior to displaying new data
         dayBox.innerHTML = ''
-        if (typeof data === 'string'){
-            return
-        }
+
         
         
         let weatherTemp = document.createElement('h5')
