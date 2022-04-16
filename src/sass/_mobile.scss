@@ -5,4 +5,12 @@
         height: 600px;
 
     }
-  }
+};
+
+@media(max-height:700px){
+    #app-container{
+        width: 300px; 
+        height: 550px;
+
+    }
+}
