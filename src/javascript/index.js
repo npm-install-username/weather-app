@@ -13,11 +13,9 @@ function searchFunc(e){
     document.getElementById('search-bar').value = ''
     
     getWeatherData(location,tempUnit).then((data)=>{
-        console.log(data)
         displayTodaysWeather(location,data,tempUnit)
     })
     getNextDaysWeather(location,tempUnit).then((data)=>{
-        console.log(data)
         displayNextDaysWeather(data,tempUnit)
         
     })
@@ -44,14 +42,14 @@ tempSwitch.forEach(element => {
                     return
                 }
                 tempUnit = "metric"
-                console.log(tempUnit)
+                
                 
             } else{
                 if(tempUnit == "imperial"){
                     return
                 }
                 tempUnit = "imperial"
-                console.log(tempUnit)
+                
                 
             }
         }
@@ -62,9 +60,7 @@ tempSwitch.forEach(element => {
                 displayTodaysWeather(location,data,tempUnit)
             })
             getNextDaysWeather(location,tempUnit).then((data)=>{
-                console.log(data)
                 displayNextDaysWeather(data,tempUnit)
-                
             })
         }
         return tempUnit

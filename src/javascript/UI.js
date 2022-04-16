@@ -19,6 +19,7 @@ content.appendChild(appContainer)
 // Create search bar components (search bar and button)
 let searchForm = document.createElement('form')
 searchForm.id = "form";
+
 appContainer.appendChild(searchForm)
 let searchBar = document.createElement('input')
 searchBar.type = "text"
