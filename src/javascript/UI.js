@@ -17,19 +17,19 @@ content.appendChild(appContainer)
 
 
 // Create search bar components (search bar and button)
-let searchBarDiv = document.createElement('div')
-searchBarDiv.id = "search-bar-div"
-appContainer.appendChild(searchBarDiv)
+let searchForm = document.createElement('form')
+searchForm.id = "form";
+appContainer.appendChild(searchForm)
 let searchBar = document.createElement('input')
 searchBar.type = "text"
 searchBar.id = "search-bar"
 searchBar.name = "search-bar"
 searchBar.placeholder = "Enter a country or city..."
-searchBarDiv.appendChild(searchBar)
+searchForm.appendChild(searchBar)
 let searchBtn = document.createElement('button')
 searchBtn.innerText = "Search"
 searchBtn.id = "search-bar-btn"
-searchBarDiv.appendChild(searchBtn)
+searchForm.appendChild(searchBtn)
 
 // Weather Display section
 let display = document.createElement('div')
