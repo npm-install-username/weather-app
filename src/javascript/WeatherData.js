@@ -5,7 +5,6 @@ async function getWeatherData(location,units){
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${units}`,{mode: 'cors'})
         const weatherData = await response.json()
-        console.log(weatherData)
         const temp = weatherData.main.temp;
         const windSpeed = weatherData.wind.speed;
         const icon = weatherData.weather[0].icon;
@@ -28,12 +27,13 @@ async function getNextDaysWeather(location, units){
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=${units}`,{mode: 'cors'})
         
         const data = await response.json()
-        console.log(data)
-        const day1 = data.list[0]
-        const day2 = data.list[8]
-        const day3 = data.list[17]
         
-        return {day1, day2, day3}
+        const day2 = data.list[0]
+       
+        const day3 = data.list[8]
+        const day4 = data.list[17]
+        
+        return {day2, day3, day4}
         
     } catch (error) {
         console.log(error)

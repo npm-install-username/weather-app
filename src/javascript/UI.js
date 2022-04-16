@@ -115,22 +115,40 @@ function displayTodaysWeather(location,data,units) {
     let todayWeatherIcon = document.createElement('img')
     todayWeatherIcon.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`
     todayWeather.appendChild(todayWeatherIcon)
-
-
-    
-    
     todayWeather.appendChild(todayWeatherWindSpeed)
 
 }
 
-function displayNextDaysWeather(location,data, units){
-    nextDaysWeather.innerHTML = ''
-    if (typeof data === 'string'){
+function displayNextDaysWeather(data, units){
 
-        return
+    
+    for (const day in data) {
+        
+        const dayBox = document.getElementById(day)
+        // Clears div prior to displaying new data
+        dayBox.innerHTML = ''
+        if (typeof data === 'string'){
+            return
+        }
+        
+        
+        let weatherTemp = document.createElement('h5')
+        if(units == "metric"){
+            weatherTemp.innerText = data[day].main.temp + '\xB0' + "C"
+            
+        } else{
+            weatherTemp.innerText = day.main.temp + '\xB0' + "F"
+        }
+        dayBox.appendChild(weatherTemp)
+        
     }
 
+
+
+    
+
+    
 }
 
 
-export default displayTodaysWeather
+export { displayTodaysWeather, displayNextDaysWeather}
