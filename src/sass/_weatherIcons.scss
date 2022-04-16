@@ -1,0 +1,41 @@
+#weather-icon-div{
+    height: 150px;
+    width: 150px;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+}
+
+.weather-icon{
+
+    &-01{
+        content: url(../images/01.svg);
+    }
+    &-02{
+        content: url(../images/02.svg);
+    }
+    &-03   {
+        content: url(../images/03.svg);
+    }
+    &-04{
+        content: url(../images/04.svg);
+    }
+    &-09{
+        content: url(../images/09.svg);
+    }
+    &-10{
+        content: url(../images/10.svg);
+    }
+    &-11{
+        content: url(../images/11.svg);
+    }
+    &-13{
+        content: url(../images/13.svg);
+    }
+    &-50{
+        content: url(../images/50.svg);
+    }
+}
