@@ -52,6 +52,11 @@ tempSwitch.forEach(element => {
             getWeatherData(location,tempUnit).then((data)=>{
                 displayTodaysWeather(location,data,tempUnit)
             })
+            getNextDaysWeather(location,tempUnit).then((data)=>{
+                console.log(data)
+                displayNextDaysWeather(data,tempUnit)
+                
+            })
         }
         return tempUnit
     })

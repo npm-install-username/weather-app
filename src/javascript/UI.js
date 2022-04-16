@@ -135,9 +135,9 @@ function displayNextDaysWeather(data, units){
         let weatherTemp = document.createElement('h5')
         if(units == "metric"){
             weatherTemp.innerText = data[day].main.temp + '\xB0' + "C"
-            
+    
         } else{
-            weatherTemp.innerText = day.main.temp + '\xB0' + "F"
+            weatherTemp.innerText = data[day].main.temp + '\xB0' + "F"
         }
         dayBox.appendChild(weatherTemp)
         
