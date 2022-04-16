@@ -23,7 +23,7 @@ input[type="radio"].toggle {
         min-width: 60px;
         background: $lightPurple;
         &:hover{
-            background: none;
+            background: scale-color($lightPurple, $lightness: 40%);
             color: $darkPurple;
         }
         &:after{
