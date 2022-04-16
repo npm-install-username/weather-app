@@ -123,4 +123,14 @@ function displayTodaysWeather(location,data,units) {
 
 }
 
+function displayNextDaysWeather(location,data, units){
+    nextDaysWeather.innerHTML = ''
+    if (typeof data === 'string'){
+
+        return
+    }
+
+}
+
+
 export default displayTodaysWeather

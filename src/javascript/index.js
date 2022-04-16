@@ -9,7 +9,6 @@ import {getWeatherData, getNextDaysWeather} from './WeatherData'
 let tempUnit = "metric"
 
 let searchBtn = document.getElementById("search-bar-btn")
-
 searchBtn.addEventListener('click',()=>{
     let location = document.getElementById('search-bar').value
     document.getElementById('search-bar').value = ''
@@ -19,7 +18,8 @@ searchBtn.addEventListener('click',()=>{
         displayTodaysWeather(location,data,tempUnit)
     })
     getNextDaysWeather(location,tempUnit).then((data)=>{
-        console.log(`next days data: ${JSON.stringify(data)}`)
+        console.log(data)
+       // console.log(`next days data: ${JSON.stringify(data)}`)
     })
 })
 
