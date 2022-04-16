@@ -37,10 +37,16 @@ tempSwitch.forEach(element => {
         
         if(element.checked){
             if(element.id == 'toggle-on'){
+                if(tempUnit == "metric"){
+                    return
+                }
                 tempUnit = "metric"
                 console.log(tempUnit)
                 
             } else{
+                if(tempUnit == "imperial"){
+                    return
+                }
                 tempUnit = "imperial"
                 console.log(tempUnit)
                 
