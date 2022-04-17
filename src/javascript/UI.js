@@ -119,8 +119,6 @@ function displayTodaysWeather(location,data,units) {
     todayWeather.appendChild(todayWeatherIconDiv)
     todayWeatherIconDiv.appendChild(todayWeatherIcon)
     todayWeatherIcon.className = `weather-icon-${data.icon.slice(0,-1)}`
-    //todayWeatherIcon.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`
-    // todayWeather.appendChild(todayWeatherIcon)
     todayWeather.appendChild(todayWeatherWindSpeed)
 
 }

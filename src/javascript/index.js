@@ -13,10 +13,17 @@ function searchFunc(e){
     document.getElementById('search-bar').value = ''
     
     getWeatherData(location,tempUnit).then((data)=>{
-        displayTodaysWeather(location,data,tempUnit)
+
+        setTimeout(()=>{
+            displayTodaysWeather(location,data,tempUnit)
+        },3000)
+
     })
     getNextDaysWeather(location,tempUnit).then((data)=>{
-        displayNextDaysWeather(data,tempUnit)
+        setTimeout(()=>{
+            displayNextDaysWeather(data,tempUnit)
+        },3000)
+        
         
     })
     e.preventDefault();
@@ -24,7 +31,24 @@ function searchFunc(e){
 
 
 let form = document.getElementById('form')
-form.addEventListener('submit', searchFunc)
+form.addEventListener('submit', (e)=>{
+    if(document.getElementById('today-weather').innerHTML.length > 0){
+        document.getElementById('today-weather').innerHTML='Loading...'
+    } else{
+        document.getElementById('today-weather').innerHTML='Loading...'
+    }
+    
+    for (let index = 2; index < 5; index++) {
+        if(document.getElementById(`day${index}`).innerHTML.length > 0){
+            console.log(document.getElementById(`day${index}`))
+            document.getElementById(`day${index}`).innerHTML=''
+        }
+    }
+
+    searchFunc(e)
+    
+
+})
 
 
 
