@@ -29,9 +29,7 @@ function searchFunc(e){
     e.preventDefault();
 }
 
-
-let form = document.getElementById('form')
-form.addEventListener('submit', (e)=>{
+function loading(){
     if(document.getElementById('today-weather').innerHTML.length > 0){
         document.getElementById('today-weather').innerHTML='Loading...'
     } else{
@@ -44,7 +42,11 @@ form.addEventListener('submit', (e)=>{
             document.getElementById(`day${index}`).innerHTML=''
         }
     }
+}
 
+let form = document.getElementById('form')
+form.addEventListener('submit', (e)=>{
+    loading()
     searchFunc(e)
     
 
