@@ -158,12 +158,25 @@ function displayNextDaysWeather(data, units){
         
         let weatherTemp = document.createElement('h5')
         if(units == "metric"){
-            weatherTemp.innerText = data[day].main.temp + '\xB0' + "C"
+            weatherTemp.innerText = Math.round(data[day].main.temp) + '\xB0' + "C"
     
         } else{
-            weatherTemp.innerText = data[day].main.temp + '\xB0' + "F"
+            weatherTemp.innerText = Math.round(data[day].main.temp) + '\xB0' + "F"
         }
+        
+        // Weather icon
+        let nextDaysIcon = document.createElement('img')
+        let nextDaysIconDiv = document.createElement('div')
+        nextDaysIconDiv.className = "weather-icon-div"
+        console.log(data[day])
+        nextDaysIcon.className = `weather-icon-${data[day].weather[0].icon.slice(0,-1)}`
+       
+        
+        // appending elements to DOM
         dayBox.appendChild(weatherTemp)
+        dayBox.appendChild(nextDaysIcon)
+
+        
         
     }
 
