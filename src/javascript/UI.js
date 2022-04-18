@@ -106,9 +106,6 @@ function displayTodaysWeather(location,data,units) {
         todayWeatherTemp.innerText = Math.round(data.temp) + '\xB0' + "F"
         todayWeatherWindSpeed.innerText = "Wind speed: " + Math.round(data.windSpeed) +" mph"
     }
-    
-    
-
 
     // Weather desctription
     let todayWeatherDesc = document.createElement('h5')
@@ -120,20 +117,13 @@ function displayTodaysWeather(location,data,units) {
     todayWeatherIconDiv.className = "weather-icon-div"
     todayWeatherIcon.className = `weather-icon-${data.icon.slice(0,-1)}`
 
-    // Creating today weather divs
-    let titleDiv = document.createElement('div')
-    titleDiv.className = 'today-weather-sub-div'
-    titleDiv.id = 'today-title'
-    
-
     // Creatinng sub container to allow div to be centered
     let todayWeatherContainer = document.createElement('div')
     todayWeatherContainer.className = "today-weather-container"
     // Order of appending DOM elements
     todayWeather.appendChild(todayWeatherContainer)
-    todayWeatherContainer.appendChild(titleDiv)
-    titleDiv.appendChild(todayWeatherTemp)
-    titleDiv.appendChild(todayWeatherLocation)
+    todayWeatherContainer.appendChild(todayWeatherLocation)
+    todayWeatherContainer.appendChild(todayWeatherTemp)
     todayWeatherContainer.appendChild(todayWeatherDesc)
     todayWeatherIconDiv.appendChild(todayWeatherIcon)
     todayWeatherContainer.appendChild(todayWeatherWindSpeed)
