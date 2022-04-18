@@ -95,15 +95,22 @@
         
         background-color: $darkGlass;
         box-shadow: $shadow;
+        display: flex;
+        align-items: center;
 
-        .today-weather-sub-div{
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            & *{
-                margin-top: auto;
+        .today-weather-container{
+            margin: auto;
+            .today-weather-sub-div{
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                & *{
+                    margin-top: auto;
+                }
             }
         }
+
+
     }
 
     #next-days-weather{

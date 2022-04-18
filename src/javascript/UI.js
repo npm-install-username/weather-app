@@ -126,14 +126,18 @@ function displayTodaysWeather(location,data,units) {
     titleDiv.id = 'today-title'
     
 
+    // Creatinng sub container to allow div to be centered
+    let todayWeatherContainer = document.createElement('div')
+    todayWeatherContainer.className = "today-weather-container"
     // Order of appending DOM elements
-    todayWeather.appendChild(titleDiv)
+    todayWeather.appendChild(todayWeatherContainer)
+    todayWeatherContainer.appendChild(titleDiv)
     titleDiv.appendChild(todayWeatherTemp)
     titleDiv.appendChild(todayWeatherLocation)
-    todayWeather.appendChild(todayWeatherDesc)
+    todayWeatherContainer.appendChild(todayWeatherDesc)
     todayWeatherIconDiv.appendChild(todayWeatherIcon)
-    todayWeather.appendChild(todayWeatherWindSpeed)
-    todayWeather.appendChild(todayWeatherIconDiv)
+    todayWeatherContainer.appendChild(todayWeatherWindSpeed)
+    todayWeatherContainer.appendChild(todayWeatherIconDiv)
 
 }
 
