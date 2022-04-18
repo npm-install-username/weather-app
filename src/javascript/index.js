@@ -8,6 +8,9 @@ import {getWeatherData, getNextDaysWeather} from './WeatherData'
 // variable init
 let tempUnit = "metric"
 
+// Set title of webpage as I have no idea how to do it with webpack
+document.title="Weather app"
+
 function searchFunc(e){
     let location = document.getElementById('search-bar').value
     document.getElementById('search-bar').value = ''
