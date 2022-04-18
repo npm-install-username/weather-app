@@ -24,4 +24,15 @@
         height: 550px;
 
     }
+    .weather-icon-div{
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        
+    }
 }
