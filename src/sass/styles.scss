@@ -91,9 +91,19 @@
     }
 
     #today-weather{
-        text-align: left;
+        text-align: center;
+        
         background-color: $darkGlass;
         box-shadow: $shadow;
+
+        .today-weather-sub-div{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            & *{
+                margin-top: auto;
+            }
+        }
     }
 
     #next-days-weather{

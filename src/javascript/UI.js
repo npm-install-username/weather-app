@@ -90,36 +90,50 @@ function displayTodaysWeather(location,data,units) {
 
     changeBackground(data)
 
+    // Location
     let todayWeatherLocation = document.createElement('h2')
     todayWeatherLocation.id = "location"
     todayWeatherLocation.innerText = location.toUpperCase()
-    todayWeather.appendChild(todayWeatherLocation)
-
-    let todayWeatherTemp = document.createElement('h4')
+    todayWeatherLocation.style.fontStyle='italic'
+    
+    // Weather temp and windspeed
+    let todayWeatherTemp = document.createElement('h1')
     let todayWeatherWindSpeed = document.createElement('h5')
     if(units == "metric"){
-        todayWeatherTemp.innerText = data.temp + '\xB0' + "C"
-        todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" km/h"
+        todayWeatherTemp.innerText = Math.round(data.temp) + '\xB0' + "C"
+        todayWeatherWindSpeed.innerText = "Wind speed: " + Math.round(data.windSpeed) +" km/h"
     } else{
-        todayWeatherTemp.innerText = data.temp + '\xB0' + "F"
-        todayWeatherWindSpeed.innerText = "Wind speed: " + data.windSpeed +" mph"
+        todayWeatherTemp.innerText = Math.round(data.temp) + '\xB0' + "F"
+        todayWeatherWindSpeed.innerText = "Wind speed: " + Math.round(data.windSpeed) +" mph"
     }
     
-    todayWeather.appendChild(todayWeatherTemp)
+    
 
 
-
+    // Weather desctription
     let todayWeatherDesc = document.createElement('h5')
-    todayWeatherDesc.innerText = data.description
-    todayWeather.appendChild(todayWeatherDesc)
-
+    todayWeatherDesc.innerText = data.description.toUpperCase()
+    
+    // Weather icon
     let todayWeatherIcon = document.createElement('img')
     let todayWeatherIconDiv = document.createElement('div')
-    todayWeatherIconDiv.id = "weather-icon-div"
-    todayWeather.appendChild(todayWeatherIconDiv)
-    todayWeatherIconDiv.appendChild(todayWeatherIcon)
+    todayWeatherIconDiv.className = "weather-icon-div"
     todayWeatherIcon.className = `weather-icon-${data.icon.slice(0,-1)}`
+
+    // Creating today weather divs
+    let titleDiv = document.createElement('div')
+    titleDiv.className = 'today-weather-sub-div'
+    titleDiv.id = 'today-title'
+    
+
+    // Order of appending DOM elements
+    todayWeather.appendChild(titleDiv)
+    titleDiv.appendChild(todayWeatherTemp)
+    titleDiv.appendChild(todayWeatherLocation)
+    todayWeather.appendChild(todayWeatherDesc)
+    todayWeatherIconDiv.appendChild(todayWeatherIcon)
     todayWeather.appendChild(todayWeatherWindSpeed)
+    todayWeather.appendChild(todayWeatherIconDiv)
 
 }
 
