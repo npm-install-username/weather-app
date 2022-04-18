@@ -1,3 +1,4 @@
+@import 'config';
 $lightPurple: #a855f7;
 $darkPurple: #7e22ce;
 
@@ -12,18 +13,21 @@ $darkPurple: #7e22ce;
     font-weight: bold;
     
     
+    
 }
 
 
 
 input[type="radio"].toggle {
     display: none;
+    
     & + label{
+        
         cursor: pointer;
         min-width: 60px;
         background: $lightPurple;
         &:hover{
-            background: scale-color($lightPurple, $lightness: 40%);
+            background: scale-color($lightPurple, $lightness: 25%);
             color: $darkPurple;
         }
         &:after{
