@@ -14,15 +14,15 @@ function searchFunc(e){
     
     getWeatherData(location,tempUnit).then((data)=>{
 
-        setTimeout(()=>{
-            displayTodaysWeather(location,data,tempUnit)
-        },3000)
+        
+        displayTodaysWeather(location,data,tempUnit)
+        
 
     })
     getNextDaysWeather(location,tempUnit).then((data)=>{
-        setTimeout(()=>{
-            displayNextDaysWeather(data,tempUnit)
-        },3000)
+        
+        displayNextDaysWeather(data,tempUnit)
+        
         
         
     })
