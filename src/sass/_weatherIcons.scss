@@ -2,10 +2,24 @@
     height: 250px;
     width: 250px;
     margin: auto;
+
+
     img{
         height: 100%;
         width: 100%;
         object-fit: contain;
+    }
+
+    &-small{
+        height: 50px;
+        width: 50px;
+        margin: auto;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    
     }
     
 }

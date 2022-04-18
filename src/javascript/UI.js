@@ -167,24 +167,19 @@ function displayNextDaysWeather(data, units){
         // Weather icon
         let nextDaysIcon = document.createElement('img')
         let nextDaysIconDiv = document.createElement('div')
-        nextDaysIconDiv.className = "weather-icon-div"
+        nextDaysIconDiv.className = "weather-icon-div-small"
         console.log(data[day])
         nextDaysIcon.className = `weather-icon-${data[day].weather[0].icon.slice(0,-1)}`
        
         
         // appending elements to DOM
         dayBox.appendChild(weatherTemp)
-        dayBox.appendChild(nextDaysIcon)
+        dayBox.appendChild(nextDaysIconDiv)
+        nextDaysIconDiv.appendChild(nextDaysIcon)
 
         
         
     }
-
-
-
-    
-
-    
 }
 
 
